@@ -9,4 +9,7 @@ public interface EAConstant {
     String WORD_SPLITER_PROPERTY_KEY = "word.splitter";
     String DEFAULT_WORD_SEP = "\\s+";
 
+    String FORK_JOIN_POOL = "fork-join-pool";
+    int DEFAULT_FORK_JOIN_POOL = Runtime.getRuntime().availableProcessors()*2;
+
 }
