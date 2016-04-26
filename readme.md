@@ -75,3 +75,7 @@ Limitation
 =============================
 ##### 1. Currently the Big File and Pair files are processed by multiple threads in single JVM. Total number is threads are controlled by CPU and cores available to the virtual machine.
 ##### 2. Perhaps this program can be converted into MapReduce program, where every map and reduce job will process chunk of file and emits the result and finally combined the final output.
+
+Test cases
+==============================
+##### 1.

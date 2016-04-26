@@ -20,7 +20,7 @@ public class ExceptionLoggingRule implements TestRule {
                 try {
                     base.evaluate();
                 } catch (Exception e) {
-                    LOGGER.error(e.getMessage());
+                    LOGGER.error("Error ",e);
                     throw e;
                 }
             }
