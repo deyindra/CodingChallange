@@ -1,0 +1,17 @@
+.DS_Store
+
+.out/
+.dist/
+.run
+.gradle/
+
+.idea/
+*.iml
+*.ipr
+*.iws
+*.uml
+**/target
+**/.classpath
+**/.project
+**/.eclipse
+**/.settings
