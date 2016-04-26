@@ -50,3 +50,28 @@ Build Instruction and Execution
  Class Diagram
 ============================
 ![class diagram](diagram.jpg)
+
+
+Approach
+=======================
+#### * Process Big File in parallel and for each line of the file perform these following operation
+##### 1. Split the line into multiple words
+##### 2. for each word put the coordinate list (rowIndex - which is line offset 0 based Index, and colIndex - 0 based index and incremented buy 1) in a concurrentHashMap
+
+#### * Process Pair file in parallel and for each line perform the following operations
+##### 1. Split line into multiple word and for each word in the line, check adjacency by investigating the row and col index from concurrentHashMap as provided by BigFileProcessor, ideally
+    rowIndex of the new word = rowIndex of 1st word in the line
+    colIndex of the new word = colIndex of the 1st word in the line + offset postion of the new word w.r.t the 1st word
+##### 2. Finally add the new word's co-ordinate in LinkedList and put the linkedList for the all adjacent words
+##### 3. In case the word list does not have K adjacent words or any of the words not  found to be adjacent as in the concurrentHashMap, it will return null co-ordinate
+
+Assumption
+=========================
+##### 1. Assume all files are separated by space and not other delimiter.
+##### 2. Duplicate line in the Pair File will be ignored.
+
+
+Limitation
+=============================
+##### 1. Currently the Big File and Pair files are processed by multiple threads in single JVM. Total number is threads are controlled by CPU and cores available to the virtual machine.
+##### 2. Perhaps this program can be converted into MapReduce program, where every map and reduce job will process chunk of file and emits the result and finally combined the final output.
