@@ -46,3 +46,7 @@ Build Instruction and Execution
 ##### 4 finally execute the program using following command
     java -jar CodingChallange-1.0-SNAPSHOT.jar <<Big File Path>> <<Pair File Path>> [Optional number to denote K adjacent word]
     if not specified K adjacent word will be 2
+
+ Class Diagram
+============================
+![class diagram](diagram.jpg)
