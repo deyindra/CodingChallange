@@ -78,4 +78,8 @@ Limitation
 
 Test cases
 ==============================
-##### 1.
+Currently 87% methods are covered by test cases.
+
+##### 1. Test cases for Big File Processing
+##### 2. Test cases for Pair File Processing
+##### 3. Test cases for Main Method processing
